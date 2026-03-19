@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RESET Portal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #0f172a;
+            color: white;
+            padding-bottom: 70px;
+        }
+
+        header {
+            background-color: #1e293b;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header-title {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .header-sub {
+            font-size: 14px;
+            color: #94a3b8;
+            margin-top: 5px;
+        }
+
+        .container {
+            padding: 15px;
+        }
+
+        .card {
+            background-color: #1e293b;
+            padding: 18px;
+            margin-bottom: 12px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .card:hover {
+            background-color: #334155;
+        }
+
+        .title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: #94a3b8;
+            margin-top: 5px;
+        }
+
+        /* Category colors */
+        .support { border-left: 4px solid #38bdf8; }
+        .people { border-left: 4px solid #22c55e; }
+        .info { border-left: 4px solid #f59e0b; }
+
+        /* HELP BUTTON */
+        .help-btn {
+            background-color: #ef4444;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            width: 100%;
+        }
+
+        .center {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        /* Bottom Bar */
+        .bottombar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #020617;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            border-top: 1px solid #1e293b;
+        }
+
+        .bottombar a {
+            text-align: center;
+            color: #38bdf8;
+            text-decoration: none;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-title">🧠 RESET Team Portal</div>
+    <div class="header-sub">Peer Support • Debrief • Resources</div>
+</header>
+
+<!-- 🚨 NEED HELP BUTTON -->
+<div class="center">
+    <button class="help-btn" onclick="location.href='resources.html'">
+        🚨 Need Help Now
+    </button>
+</div>
+
+<div class="container">
+
+    <div class="card support" onclick="location.href='debrief.html'">
+        <div class="title">Debrief Guide</div>
+        <div class="subtitle">Step-by-step support flow</div>
+    </div>
+
+    <div class="card support" onclick="location.href='protocols.html'">
+        <div class="title">Support Guide</div>
+        <div class="subtitle">Critical response & peer support</div>
+    </div>
+
+    <div class="card people" onclick="location.href='contacts.html'">
+        <div class="title">Contacts</div>
+        <div class="subtitle">RESET team directory</div>
+    </div>
+
+    <div class="card info" onclick="location.href='resources.html'">
+        <div class="title">Resources</div>
+        <div class="subtitle">Escalation & support tools</div>
+    </div>
+
+    <div class="card info" onclick="location.href='training.html'">
+        <div class="title">Training</div>
+        <div class="subtitle">Schedule & skill sessions</div>
+    </div>
+
+</div>
+
+<!-- Bottom Bar -->
+<div class="bottombar">
+    <a href="reset-portal.html">🏠<br>Home</a>
+    <a href="debrief.html">🧠<br>Debrief</a>
+    <a href="contacts.html">📞<br>Call</a>
+    <a href="resources.html">📚<br>Resources</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RESET Debrief Guide</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            background-color: #0f172a;
+            color: white;
+        }
+
+        header {
+            background-color: #1e293b;
+            padding: 15px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .container {
+            padding: 15px;
+        }
+
+        .step {
+            background-color: #1e293b;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .step:hover {
+            background-color: #334155;
+        }
+
+        .title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .content {
+            display: none;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #cbd5f5;
+        }
+
+        .note {
+            margin-top: 10px;
+            font-size: 13px;
+            color: #94a3b8;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            border-radius: 8px;
+            background-color: #334155;
+            color: white;
+            font-size: 16px;
+        }
+		.quickbar {
+    display: flex;
+    justify-content: space-around;
+    background-color: #020617;
+    padding: 10px;
+    border-bottom: 1px solid #1e293b;
+}
+
+.quickbar a {
+    color: #38bdf8;
+    text-decoration: none;
+    font-size: 14px;
+}
+.bottombar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #020617;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    border-top: 1px solid #1e293b;
+}
+
+.bottombar a {
+    text-align: center;
+    color: #38bdf8;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+body {
+    padding-bottom: 70px; /* prevents content from being hidden behind bar */
+}
+    </style>
+</head>
+<div class="bottombar">
+    <a href="reset-portal.html">🏠<br>Home</a>
+    <a href="debrief.html">🧠<br>Debrief</a>
+    <a href="contacts.html">📞<br>Call</a>
+    <a href="resources.html">📚<br>Resources</a>
+</div>
+<body>
+
+<header>🧠 RESET Debrief Guide</header>
+
+<div class="container">
+
+    <!-- STEP 1 -->
+    <div class="step" onclick="toggle(this)">
+        <div class="title">1️⃣ Opening the Debrief</div>
+        <div class="content">
+            - Set a calm tone<br>
+            - "This is a safe space to talk"<br>
+            - Participation is voluntary<br>
+            - Keep it confidential<br>
+
+            <div class="note">
+                Keep it simple. Don’t over-explain.
+            </div>
+        </div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="step" onclick="toggle(this)">
+        <div class="title">2️⃣ What Happened (Facts)</div>
+        <div class="content">
+            - Walk through the call step-by-step<br>
+            - Let crew describe what they saw/did<br>
+            - Avoid judgment or correction<br>
+
+            <div class="note">
+                This grounds everyone in the same event.
+            </div>
+        </div>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="step" onclick="toggle(this)">
+        <div class="title">3️⃣ Reactions</div>
+        <div class="content">
+            - "What stood out to you?"<br>
+            - "How did that feel?"<br>
+            - Normalize responses<br>
+            - Allow silence<br>
+
+            <div class="note">
+                Don’t force people to talk.
+            </div>
+        </div>
+    </div>
+
+    <!-- STEP 4 -->
+    <div class="step" onclick="toggle(this)">
+        <div class="title">4️⃣ Support & Coping</div>
+        <div class="content">
+            - Reinforce normal stress reactions<br>
+            - Encourage talking with peers<br>
+            - Offer RESET follow-up<br>
+
+            <div class="note">
+                This is support, not counseling.
+            </div>
+        </div>
+    </div>
+
+    <!-- STEP 5 -->
+    <div class="step" onclick="toggle(this)">
+        <div class="title">5️⃣ Closing</div>
+        <div class="content">
+            - Summarize briefly<br>
+            - Provide resources if needed<br>
+            - Identify anyone needing follow-up<br>
+            - Thank the group<br>
+
+            <div class="note">
+                End on a steady, supportive tone.
+            </div>
+        </div>
+    </div>
+
+    <!-- STEP 6 -->
+    <div class="step" onclick="toggle(this)">
+        <div class="title">⚠️ Watch For (Escalation)</div>
+        <div class="content">
+            - Withdrawal or shutdown<br>
+            - Anger or unusual behavior<br>
+            - Statements of hopelessness<br>
+            - Substance concerns<br>
+			<div style="margin-top: 15px;">
+    <button onclick="location.href='resources.html'">🧠 Open Resources</button>
+    <button onclick="location.href='contacts.html'">📞 Call RESET Contact</button>
+</div>
+
+            <d<div class="note">
+    If concerned → 
+    <a href="resources.html">Open Resources</a> or 
+    <a href="contacts.html">Call RESET</a>
+</div>
+        </div>
+    </div>
+<button onclick="location.href='resources.html'">🧠 Open Resources</button>
+<button onclick="location.href='contacts.html'">📞 Call RESET Team</button>
+<div style="display: flex; gap: 10px;">
+    <button onclick="history.back()">⬅ Back</button>
+    <button onclick="location.href='reset-portal.html'">🏠 Home</button>
+</div>
+
+</div>
+
+<script>
+function toggle(element) {
+    let content = element.querySelector(".content");
+    content.style.display = content.style.display === "block" ? "none" : "block";
+}
+</script>
+
+</body>
+</html>
+<div class="quickbar">
+    <a href="contacts.html">📞 Call</a>
+    <a href="resources.html">🧠 Resources</a>
+    <a href="contacts.html">👥 Contacts</a>
+</div>
+<div class="content">
+    - Ensure scene is safe<br>
+    - Initiate check-in<br><br>
+
+    <a href="debrief.html">➡️ Start Debrief</a><br>
+    <a href="contacts.html">📞 Contact RESET</a>
+</div>
+<button onclick="location.href='resources.html'">🧠 Open Resources</button>
+<button onclick="location.href='contacts.html'">📞 Contact RESET</button>

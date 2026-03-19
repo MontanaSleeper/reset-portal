@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Training Schedule</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            background-color: #0f172a;
+            color: white;
+        }
+
+        header {
+            background-color: #1e293b;
+            padding: 15px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .container { padding: 15px; }
+
+        .event {
+            background-color: #1e293b;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 10px;
+            border-left: 5px solid #22c55e;
+        }
+
+        .mandatory { border-left-color: #ef4444; }
+        .optional { border-left-color: #3b82f6; }
+
+        .date { font-weight: bold; }
+        .title { font-size: 17px; margin-top: 5px; }
+        .details { font-size: 14px; color: #94a3b8; }
+
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            border-radius: 8px;
+            background-color: #334155;
+            color: white;
+            font-size: 16px;
+        }
+
+        .add-btn {
+            background-color: #22c55e;
+            font-weight: bold;
+        }
+
+        .form-popup {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #1e293b;
+            padding: 15px;
+            border-top: 2px solid #38bdf8;
+        }
+
+        input, select {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 5px;
+            border: none;
+        }
+		.quickbar {
+    display: flex;
+    justify-content: space-around;
+    background-color: #020617;
+    padding: 10px;
+    border-bottom: 1px solid #1e293b;
+}
+
+.quickbar a {
+    color: #38bdf8;
+    text-decoration: none;
+    font-size: 14px;
+}
+.bottombar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #020617;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    border-top: 1px solid #1e293b;
+}
+
+.bottombar a {
+    text-align: center;
+    color: #38bdf8;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+body {
+    padding-bottom: 70px; /* prevents content from being hidden behind bar */
+}
+    </style>
+</head>
+<div class="bottombar">
+    <a href="reset-portal.html">🏠<br>Home</a>
+    <a href="debrief.html">🧠<br>Debrief</a>
+    <a href="contacts.html">📞<br>Call</a>
+    <a href="resources.html">📚<br>Resources</a>
+</div>
+<body>
+
+<header>📅 Training Schedule</header>
+
+<div class="container" id="schedule"></div>
+
+<button class="add-btn" onclick="openForm()">+ Add Training</button>
+<div style="display: flex; gap: 10px;">
+    <button onclick="history.back()">⬅ Back</button>
+    <button onclick="location.href='reset-portal.html'">🏠 Home</button>
+</div>
+
+<!-- FORM -->
+<div class="form-popup" id="form">
+
+    <input type="text" id="date" placeholder="Date (April 10 - 1800)">
+    <input type="text" id="title" placeholder="Training Title">
+    <input type="text" id="details" placeholder="Details">
+
+    <select id="type">
+        <option value="">Standard</option>
+        <option value="mandatory">Mandatory</option>
+        <option value="optional">Optional</option>
+    </select>
+
+    <button onclick="addTraining()">Add</button>
+    <button onclick="closeForm()">Cancel</button>
+
+</div>
+
+<script>
+function openForm() {
+    document.getElementById("form").style.display = "block";
+}
+
+function closeForm() {
+    document.getElementById("form").style.display = "none";
+}
+
+// Load saved trainings
+window.onload = function() {
+    let trainings = JSON.parse(localStorage.getItem("trainings")) || [];
+    trainings.forEach(t => displayTraining(t));
+};
+
+// Add new training
+function addTraining() {
+    let date = document.getElementById("date").value;
+    let title = document.getElementById("title").value;
+    let details = document.getElementById("details").value;
+    let type = document.getElementById("type").value;
+
+    if (!date || !title) {
+        alert("Please fill in Date and Title");
+        return;
+    }
+
+    let training = { date, title, details, type };
+
+    let trainings = JSON.parse(localStorage.getItem("trainings")) || [];
+    trainings.push(training);
+    localStorage.setItem("trainings", JSON.stringify(trainings));
+
+    displayTraining(training);
+    closeForm();
+}
+
+// Display training on screen
+function displayTraining(t) {
+    let eventDiv = document.createElement("div");
+    eventDiv.className = "event " + t.type;
+
+    eventDiv.innerHTML = `
+        <div class="date">${t.date}</div>
+        <div class="title">${t.title}</div>
+        <div class="details">${t.details}</div>
+    `;
+
+    document.getElementById("schedule").appendChild(eventDiv);
+}
+</script>
+
+</body>
+</html>
+<div class="quickbar">
+    <a href="contacts.html">📞 Call</a>
+    <a href="resources.html">🧠 Resources</a>
+    <a href="contacts.html">👥 Contacts</a>
+</div>
+<div class="content">
+    - Ensure scene is safe<br>
+    - Initiate check-in<br><br>
+
+    <a href="debrief.html">➡️ Start Debrief</a><br>
+    <a href="contacts.html">📞 Contact RESET</a>
+</div>
+<button onclick="location.href='contacts.html'">👥 Contact Training Lead</button>
